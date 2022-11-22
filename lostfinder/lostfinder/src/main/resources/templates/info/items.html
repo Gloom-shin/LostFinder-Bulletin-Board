@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<!--    &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
+<!--    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">-->
+<!--    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">-->
+<!--    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">-->
+
+    <!-- Template Main CSS File -->
+    <link th:href="@{/../assets/css/main.css}"
+             href="/../static/assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <h1>Lost<span>.</span>Finder</h1>
+        </a>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="report.html">습득신고</a></li>
+                <li><a href="bulletinboard.html">게시판</a></li>
+                <li><a href="goodtip.html">대처요령</a></li>
+                <li><a href="mypage.html">나의정보</a></li>
+            </ul>
+        </nav><!-- .navbar -->
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+</header><!-- End Header -->
+
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>비상연락망 목록</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="#" class="form-search  order-3 order-lg-3 d-flex " data-aos="fade-up" data-aos-delay="200">
+                <input type="text" class="form-control" placeholder="분실한 지역을 입력하세요">
+                <button type="submit" class="btn btn-primary btn-lg">Search</button>
+            </form>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>지역</th>
+                <th>분류</th>
+                <th>버스번호/지하철 노선</th>
+                <th>회사/역이름</th>
+                <th>전화번호</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><a href="item.html">서울 강남구</a></td>
+                <td><a href="item.html">버스</a></td>
+                <td><a href="item.html">400번 </a></td>
+                <td>삼성여객</td>
+                <td>02-793-5627</td>
+            </tr>
+            <tr>
+                <td><a href="item.html">서울 강남구</a></td>
+                <td><a href="item.html">버스</a></td>
+                <td><a href="item.html">643번 </a></td>
+                <td>관악교통</td>
+                <td>02-936-6000</td>
+            </tr>
+            <tr>
+                <td><a href="item.html">서울 강남구</a></td>
+                <td><a href="item.html">지하철</a></td>
+                <td><a href="item.html">2호선</a></td>
+                <td>강남역</td>
+                <td>02-6110-2221 </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+<!--&lt;!&ndash; Vendor JS Files &ndash;&gt;-->
+<!--<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+<!--<script src="/assets/vendor/aos/aos.js"></script>-->
+<!--<script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>-->
+<!--<script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>-->
+<!--<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>-->
+
+<!-- Template Main JS File -->
+<script th:src="@{/../assets/js/main.js}"
+ src="/../static/assets/js/main.js"></script>
+</body>
+</html>

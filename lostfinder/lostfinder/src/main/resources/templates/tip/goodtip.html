@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,16 +20,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<!--    &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
+<!--    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">-->
+<!--    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">-->
+<!--    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">-->
 
 
     <!-- Template Main CSS File -->
-    <link href="../assets/css/main.css" rel="stylesheet">
+    <link th:href="@{/../assets/css/main.css}"
+          href="/../static/assets/css/main.css" rel="stylesheet">
 </head>
 <body>
 <!-- ======= Header ======= -->
@@ -80,21 +82,21 @@
                     <article>
 
                         <div class="post-img">
-                            <img src="../assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsBus.png" alt="" class="img-fluid">
                         </div>
 
-                        <p class="post-category">Politics</p>
+                        <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                            <a href="blog-details.html">버스에서 물건을 잃어버렸을 때 대처방법</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="../assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <img src="/../static/assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">Maria Doe</p>
+                                <p class="post-author-list">관리자</p>
                                 <p class="post-date">
-                                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                                    <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
                             </div>
                         </div>
@@ -106,21 +108,21 @@
                     <article>
 
                         <div class="post-img">
-                            <img src="../assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsTaxi.png" alt="" class="img-fluid">
                         </div>
 
-                        <p class="post-category">Sports</p>
+                        <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="../blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                            <a href="../blog-details.html">택시에서 물건을 잃어버렸을 때 대처방법 1편</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="../assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <img src="/../static/assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">Allisa Mayer</p>
+                                <p class="post-author-list">관리자</p>
                                 <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 5, 2022</time>
+                                    <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
                             </div>
                         </div>
@@ -132,21 +134,21 @@
                     <article>
 
                         <div class="post-img">
-                            <img src="../assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsTaxi2.png" alt="" class="img-fluid">
                         </div>
 
-                        <p class="post-category">Entertainment</p>
+                        <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
+                            <a href="blog-details.html">택시에서 물건을 잃어버렸을 때 대처방법 2편</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="../assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <img src="/../static/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">Mark Dower</p>
+                                <p class="post-author-list">관리자</p>
                                 <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
+                                    <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
                             </div>
                         </div>
@@ -158,21 +160,21 @@
                     <article>
 
                         <div class="post-img">
-                            <img src="../assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsSubway.png" alt="" class="img-fluid">
                         </div>
 
-                        <p class="post-category">Sports</p>
+                        <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
+                            <a href="blog-details.html">지하철에서 물건을 잃어버렸을 때 대처방법 1편</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="../assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <img src="/../static/assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">Lisa Neymar</p>
+                                <p class="post-author-list">관리자</p>
                                 <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 30, 2022</time>
+                                    <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
                             </div>
                         </div>
@@ -184,21 +186,21 @@
                     <article>
 
                         <div class="post-img">
-                            <img src="../assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsSubway2.png" alt="" class="img-fluid">
                         </div>
 
-                        <p class="post-category">Politics</p>
+                        <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
+                            <a href="blog-details.html">지하철에서 물건을 잃어버렸을 때 대처방법 2편</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="../assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <img src="/../static/assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">Denis Peterson</p>
+                                <p class="post-author-list">관리자</p>
                                 <p class="post-date">
-                                    <time datetime="2022-01-01">Jan 30, 2022</time>
+                                    <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
                             </div>
                         </div>
@@ -210,21 +212,21 @@
                     <article>
 
                         <div class="post-img">
-                            <img src="../assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsSubway3.png" alt="" class="img-fluid">
                         </div>
 
-                        <p class="post-category">Entertainment</p>
+                        <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
+                            <a href="blog-details.html">지하철에서 물건을 잃어버렸을 때 대처방법 3편</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="../assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                            <img src="/../static/assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">Mika Lendon</p>
+                                <p class="post-author-list">관리자</p>
                                 <p class="post-date">
-                                    <time datetime="2022-01-01">Feb 14, 2022</time>
+                                    <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
                             </div>
                         </div>
@@ -247,14 +249,15 @@
 
 </main><!-- End #main -->
 
-<!-- Vendor JS Files -->
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendor/aos/aos.js"></script>
-<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+<!--&lt;!&ndash; Vendor JS Files &ndash;&gt;-->
+<!--<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+<!--<script src="../assets/vendor/aos/aos.js"></script>-->
+<!--<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>-->
+<!--<script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>-->
+<!--<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>-->
 
 <!-- Template Main JS File -->
-<script src="../assets/js/main.js"></script>
+<script th:src="@{/../assets/js/main.js}"
+        src="/../static/assets/js/main.js"></script>
 </body>
 </html>
