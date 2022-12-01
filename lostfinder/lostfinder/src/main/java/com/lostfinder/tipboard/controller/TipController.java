@@ -18,8 +18,8 @@ public class TipController {
     private final TipService tipService;
 
     @GetMapping
-    public String pageGoodTip(int page, int size, Model model){
-        Page<Tip> tipPage = tipService.findTips(page-1, size);
+    public String pageGoodTip(int page,  Model model){
+        Page<Tip> tipPage = tipService.findTips(page-1, 6);
         List<Tip> tipList = tipPage.getContent();
         model.addAttribute("tipList",tipList);
         return "tip/goodtip";
@@ -29,7 +29,7 @@ public class TipController {
     public String selectGoodTip(@PathVariable Long tipId, Model model){
         Tip tip = tipService.findTip(tipId);
         model.addAttribute("tip", tip);
-        return "tip/goodtip";
+        return "tip/tip-details";
     }
     @PostMapping
     public String createGoodTip(@RequestBody Tip tip , Model model){
