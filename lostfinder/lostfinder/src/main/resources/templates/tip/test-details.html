@@ -6,10 +6,13 @@
     <title>Title</title>
 </head>
 <body>
-<h2 th:text="${test.getTitle()}" class="title">기본제목</h2>
-<h2 th:text="${test.writer}" class="title">기본저자</h2>
-<h2 th:text="${test.content}" class="title">기본내용</h2>
-<h2 th:text="${test.createAt}" class="title">시간?</h2>
-
+<div class="col-xl-4 col-md-6" th:each="tip: ${tipList}">
+    <h2 class="title">
+    <a href="./" th:text="${tip.title}">버스에서 물건을 잃어버렸을 때 대처방법</a>
+    </h2>
+    <div class="post-meta">
+    <p class="post-author-list" th:text="${tip.writer}">관리자</p>
+    </div>
+</div>
 </body>
 </html>

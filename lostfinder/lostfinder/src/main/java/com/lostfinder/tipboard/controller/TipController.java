@@ -19,7 +19,7 @@ public class TipController {
 
     @GetMapping
     public String pageGoodTip(int page, int size, Model model){
-        Page<Tip> tipPage = tipService.findTips(page, size);
+        Page<Tip> tipPage = tipService.findTips(page-1, size);
         List<Tip> tipList = tipPage.getContent();
         model.addAttribute("tipList",tipList);
         return "tip/goodtip";

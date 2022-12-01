@@ -42,10 +42,10 @@
         </a>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../">Home</a></li>
                 <li><a href="report.html">습득신고</a></li>
                 <li><a href="bulletinboard.html">게시판</a></li>
-                <li><a href="goodtip.html">대처요령</a></li>
+                <li><a th:href="@{./goodtip}" href="tip/goodtip">대처요령</a></li>
                 <li><a href="mypage.html">나의정보</a></li>
             </ul>
         </nav><!-- .navbar -->
@@ -78,23 +78,23 @@
 
             <div class="row gy-4 posts-list">
 
-                <div class="col-xl-4 col-md-6">
+                <div class="col-xl-4 col-md-6" th:each="tip: ${tipList}" >
                     <article>
 
                         <div class="post-img">
-                            <img src="/../static/assets/img/blog/lostplaceIsBus.png" alt="" class="img-fluid">
+                            <img src="/../static/assets/img/blog/lostplaceIsBus.png" alt="이미지 없음" class="img-fluid">
                         </div>
 
                         <p class="post-category">대처요령</p>
 
                         <h2 class="title">
-                            <a href="blog-details.html">버스에서 물건을 잃어버렸을 때 대처방법</a>
+                            <a href="blog-details.html" th:text="${tip.title}">버스에서 물건을 잃어버렸을 때 대처방법</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
                             <img src="/../static/assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                             <div class="post-meta">
-                                <p class="post-author-list">관리자</p>
+                                <p class="post-author-list" th:text="${tip.writer}">관리자</p>
                                 <p class="post-date">
                                     <time datetime="2022-01-01">Nov 11, 2022</time>
                                 </p>
@@ -104,135 +104,6 @@
                     </article>
                 </div><!-- End post list item -->
 
-                <div class="col-xl-4 col-md-6">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="/../static/assets/img/blog/lostplaceIsTaxi.png" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">대처요령</p>
-
-                        <h2 class="title">
-                            <a href="../blog-details.html">택시에서 물건을 잃어버렸을 때 대처방법 1편</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="/../static/assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author-list">관리자</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Nov 11, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-4 col-md-6">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="/../static/assets/img/blog/lostplaceIsTaxi2.png" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">대처요령</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">택시에서 물건을 잃어버렸을 때 대처방법 2편</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="/../static/assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author-list">관리자</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Nov 11, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-4 col-md-6">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="/../static/assets/img/blog/lostplaceIsSubway.png" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">대처요령</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">지하철에서 물건을 잃어버렸을 때 대처방법 1편</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="/../static/assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author-list">관리자</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Nov 11, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-4 col-md-6">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="/../static/assets/img/blog/lostplaceIsSubway2.png" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">대처요령</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">지하철에서 물건을 잃어버렸을 때 대처방법 2편</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="/../static/assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author-list">관리자</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Nov 11, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
-
-                <div class="col-xl-4 col-md-6">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="/../static/assets/img/blog/lostplaceIsSubway3.png" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">대처요령</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">지하철에서 물건을 잃어버렸을 때 대처방법 3편</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="/../static/assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author-list">관리자</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Nov 11, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
 
             </div><!-- End blog posts list -->
 
