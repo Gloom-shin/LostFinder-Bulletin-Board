@@ -8,7 +8,7 @@
 <body>
 <div class="col-xl-4 col-md-6" th:each="tip: ${tipList}">
     <h2 class="title">
-    <a href="./" th:text="${tip.title}">버스에서 물건을 잃어버렸을 때 대처방법</a>
+        <a th:href="@{/tip/goodtip/{param}(param=${tip.tipId})}" th:text="${tip.title}">버스에서 물건을 잃어버렸을 때 대처방법</a>
     </h2>
     <div class="post-meta">
     <p class="post-author-list" th:text="${tip.writer}">관리자</p>
