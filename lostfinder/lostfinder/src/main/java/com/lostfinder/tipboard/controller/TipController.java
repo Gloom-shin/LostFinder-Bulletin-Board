@@ -4,13 +4,16 @@ import com.lostfinder.tipboard.entity.Tip;
 import com.lostfinder.tipboard.service.TipService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/tip/goodtip")
 @RequiredArgsConstructor
 public class TipController {
@@ -18,32 +21,30 @@ public class TipController {
     private final TipService tipService;
 
     @GetMapping
-    public String pageGoodTip(int page,  Model model){
+    public ResponseEntity<?> pageGoodTip(int page){
         Page<Tip> tipPage = tipService.findTips(page-1, 6);
         List<Tip> tipList = tipPage.getContent();
-        model.addAttribute("tipList",tipList);
-        return "tip/goodtip";
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/{tipId}")
-    public String selectGoodTip(@PathVariable Long tipId, Model model){
+    public ResponseEntity<?>  selectGoodTip(@PathVariable Long tipId){
         Tip tip = tipService.findTip(tipId);
-        model.addAttribute("tip", tip);
-        return "tip/tip-details";
+        return new ResponseEntity<>(tip, HttpStatus.OK);
+
     }
     @PostMapping
-    public String createGoodTip(@RequestBody Tip tip , Model model){
+    public ResponseEntity<?>  createGoodTip(@RequestBody Tip tip ){
         Tip createTip = tipService.createTip(tip);
+        return new ResponseEntity<>(createTip ,HttpStatus.OK); //DTO 필요
 
-        model.addAttribute("tip", createTip);
-        return "tip/tip-details";
     }
 
     @PatchMapping("/{tipId}")
-    public String updateGoodTip(@PathVariable Long tipId, @RequestBody Tip tip, Model model){
+    public ResponseEntity<?>  updateGoodTip(@PathVariable Long tipId, @RequestBody Tip tip){
         Tip updateTip = tipService.updateTip(tipId, tip);
-        model.addAttribute("updateTip", updateTip);
-        return "tip/tip-details";
+        return new ResponseEntity<>(updateTip, HttpStatus.OK);
+
     }
 
     @DeleteMapping("/{tipId}")
