@@ -21,12 +21,22 @@ public class Tip {
     private Long tipId;
 
     @Column
+    private String thumbnail;
+
+    @Column
+    private String category;
+
+    @Column
+    private String profileImg;
+
+
+    @Column
     private String title;
 
     @Column
     private String writer;
 
-    @Column
+    @Lob
     private String content;
 
     @Column
