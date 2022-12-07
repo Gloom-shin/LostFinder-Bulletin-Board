@@ -19,8 +19,8 @@ public class BoardService {
     public Board createBoard(Board board, Board.BoardType type){
         board.setBoardType(type);
         Board save = boardRepository.save(board);
-        LocalDateTime createAt = save.getCreateAt();
-        System.out.println("createAt = " + createAt);
+//        LocalDateTime createAt = save.getCreatedAt();
+//        System.out.println("createAt = " + createAt);
         return save;
     }
 

@@ -1,9 +1,11 @@
 package com.lostfinder.board.controller;
 
 import com.lostfinder.board.dto.BoardRequestDto;
+import com.lostfinder.board.dto.BoardResponseDto;
 import com.lostfinder.board.dto.mapper.BoardMapper;
 import com.lostfinder.board.entity.Board;
 import com.lostfinder.board.service.BoardService;
+import com.lostfinder.dto.MultiResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -26,7 +28,7 @@ public class BoardController {
         Board.BoardType verifyType = Board.BoardType.of(boardType);
         Board board = mapper.createdBoardToBoard(createBoard);
         Board saveBoard = boardService.createBoard(board, verifyType);
-        return new ResponseEntity<>(saveBoard ,HttpStatus.OK); //DTO 필요
+        return new ResponseEntity<>(mapper.BoardToDetailBoard(saveBoard) ,HttpStatus.OK);
 
     }
     @PatchMapping("/{boardType}/{boardId}")
@@ -37,7 +39,7 @@ public class BoardController {
         Board.BoardType.of(boardType);
         Board board = mapper.updateBoardToBoard(updateBoard);
         Board saveBoard = boardService.updateBoard(boardId, board);
-        return new ResponseEntity<>(saveBoard, HttpStatus.OK);
+        return new ResponseEntity<>(mapper.BoardToDetailBoard(saveBoard), HttpStatus.OK);
 
     }
 
@@ -47,15 +49,20 @@ public class BoardController {
         int defaultPageSize = 6;
         // boardType 검사 필요
         Board.BoardType verifyType = Board.BoardType.of(boardType);
-        Page<Board> tipPage = boardService.findBoards(page-1, defaultPageSize, verifyType);
-        List<Board> tipList = tipPage.getContent();
-        return new ResponseEntity<>(tipList, HttpStatus.OK);
+        Page<Board> Page = boardService.findBoards(page-1, defaultPageSize, verifyType);
+        List<Board> boardList = Page.getContent();
+        return new ResponseEntity<>(
+                new MultiResponseDto(
+                        mapper.BoardListToBoardPage(boardList), Page),
+                HttpStatus.OK);
     }
 
     @GetMapping("/{boardType}/{boardId}")
-    public ResponseEntity<?>  selectGoodTip(@PathVariable Long boardId){
+    public ResponseEntity<?>  selectGoodTip(@PathVariable String boardType,
+                                            @PathVariable Long boardId){
         Board board = boardService.findBoard(boardId);
-        return new ResponseEntity<>(board, HttpStatus.OK);
+        BoardResponseDto.Detail detailPage = mapper.BoardToDetailBoard(board);
+        return new ResponseEntity<>(detailPage, HttpStatus.OK);
     }
 
     @DeleteMapping("/{boardId}")
