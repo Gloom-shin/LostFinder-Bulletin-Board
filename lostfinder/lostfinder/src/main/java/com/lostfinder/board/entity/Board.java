@@ -1,9 +1,6 @@
 package com.lostfinder.board.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -22,7 +19,7 @@ public class Board {
     private Long boardId;
 
     @Column
-    private String boardType;
+    private BoardType boardType;
 
     @Column
     private String category;
@@ -45,15 +42,14 @@ public class Board {
 
     @CreatedDate
     @Column(name = "create_at", updatable = false)
-    private LocalDateTime createAt = LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now();
 
 
-
-    public enum Type{
+    public enum BoardType{
         tip, community;
-        public static Type of(String type){
-            return Arrays.stream(Type.values())
-                    .filter(s -> s.equals(type))
+        public static BoardType of(String type){
+            return Arrays.stream(BoardType.values())
+                    .filter(s -> s.name().equals(type))
                     .findAny()
                     .orElseThrow();
         }
