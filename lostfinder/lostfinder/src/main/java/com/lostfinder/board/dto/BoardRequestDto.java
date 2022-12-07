@@ -1,5 +1,6 @@
 package com.lostfinder.board.dto;
 
+import com.lostfinder.board.entity.Board;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,8 +11,6 @@ public class BoardRequestDto {
 
     @Getter
     @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
     public static class Create{
         private String boardType;
         private String category;
@@ -20,12 +19,14 @@ public class BoardRequestDto {
         private String content;
 
         // 작성자의 경우 principal 로 확인
+
+        public Board.BoardCategory getCategory() {
+            return Board.BoardCategory.of(category); // 검증
+        }
     }
 
     @Getter
     @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
     public static class Update{
         private String boardType;
         private String category;
@@ -33,5 +34,9 @@ public class BoardRequestDto {
         private String title;
         private String content;
         // 작성자의 경우 principal 로 확인
+
+        public Board.BoardCategory getCategory() {
+            return Board.BoardCategory.of(category); // 검증
+        }
     }
 }
