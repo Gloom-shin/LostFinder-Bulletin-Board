@@ -1,4 +1,4 @@
-package com.lostfinder.tipboard.entity;
+package com.lostfinder.board.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,33 +14,32 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tip {
-
+public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long tipId;
+    private Long boardId;
 
     @Column
-    private String thumbnail;
+    private String boardType;
 
     @Column
     private String category;
 
     @Column
-    private String profileImg;
+    private String thumbnail;
 
 
     @Column
     private String title;
-
-    @Column
-    private String writer;
 
     @Lob
     private String content;
 
     @Column
     private int commentCount = 0;
+
+    @Column
+    private int recommendCount = 0;
 
     @CreatedDate
     @Column(name = "create_at", updatable = false)
