@@ -16,9 +16,9 @@ import java.util.Optional;
 public class BoardService {
     private final BoardRepository boardRepository;
 
-    public Board createBoard(Board board){
+    public Board createBoard(Board board, Board.BoardType type){
+        board.setBoardType(type);
         Board save = boardRepository.save(board);
-
         LocalDateTime createAt = save.getCreateAt();
         System.out.println("createAt = " + createAt);
         return save;
@@ -30,8 +30,8 @@ public class BoardService {
 
         return verifiedTip;
     }
-    public Page<Board> findBoards(int page, int size){
-        return boardRepository.findAll(PageRequest.of(page, size));
+    public Page<Board> findBoards(int page, int size, Board.BoardType verifyType){
+        return boardRepository.findByBoardType(verifyType, PageRequest.of(page, size));
     }
 
 
