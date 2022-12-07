@@ -11,21 +11,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/board/tip")
+@RequestMapping("/board")
 @RequiredArgsConstructor
 public class TipController {
 
     private final BoardService boardService;
-
-    @GetMapping
-    public ResponseEntity<?> pageGoodTip(int page){
-        Page<Board> tipPage = boardService.findBoards(page-1, 6);
+    private final Board board;    @GetMapping("/{boardType}")
+    public ResponseEntity<?> pageGoodTip(@RequestParam int page,
+                                         @PathVariable String boardType){
+        int defaultPageSize = 6;
+        // boardType 검사 필요
+        Board.Type verifyType = Board.Type.of(boardType);
+        Page<Board> tipPage = boardService.findBoards(page-1, defaultPageSize, verifyType);
         List<Board> tipList = tipPage.getContent();
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(tipList, HttpStatus.OK);
     }
 
-    @GetMapping("/{tipId}")
-    public ResponseEntity<?>  selectGoodTip(@PathVariable Long tipId){
+    @GetMapping("/{boardType}/{tipId}")
+    public ResponseEntity<?>  selectGoodTip(@PathVariable String boardType, @PathVariable Long tipId){
         Board board = boardService.findBoard(tipId);
         return new ResponseEntity<>(board, HttpStatus.OK);
 
