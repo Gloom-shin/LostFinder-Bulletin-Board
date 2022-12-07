@@ -1,5 +1,7 @@
 package com.lostfinder.board.controller;
 
+import com.lostfinder.board.dto.BoardRequestDto;
+import com.lostfinder.board.dto.mapper.BoardMapper;
 import com.lostfinder.board.entity.Board;
 import com.lostfinder.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -13,10 +15,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/board")
 @RequiredArgsConstructor
-public class TipController {
+public class BoardController {
 
     private final BoardService boardService;
-    private final Board board;    @GetMapping("/{boardType}")
+    private final BoardMapper mapper;
+    @GetMapping("/{boardType}")
     public ResponseEntity<?> pageGoodTip(@RequestParam int page,
                                          @PathVariable String boardType){
         int defaultPageSize = 6;
@@ -33,10 +36,14 @@ public class TipController {
         return new ResponseEntity<>(board, HttpStatus.OK);
 
     }
-    @PostMapping
-    public ResponseEntity<?>  createGoodTip(@RequestBody Board board ){
-        Board createBoard = boardService.createBoard(board);
-        return new ResponseEntity<>(createBoard ,HttpStatus.OK); //DTO 필요
+    @PostMapping("/{boardType}")
+    public ResponseEntity<?>  createGoodTip(@RequestBody BoardRequestDto.Create createBoard,
+                                            @PathVariable String boardType){
+        // boardType 검사 필요
+        Board.Type verifyType = Board.Type.of(boardType);
+        Board board = mapper.createdBoardToBoard(createBoard);
+        Board saveBoard = boardService.createBoard(board);
+        return new ResponseEntity<>(saveBoard ,HttpStatus.OK); //DTO 필요
 
     }
 
