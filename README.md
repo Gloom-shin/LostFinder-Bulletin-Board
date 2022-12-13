@@ -37,9 +37,9 @@
 
 ### 고민사항 
  - 커뮤니티, 꿀팁 게시판 [설계에 대한 고민](https://rare-fire-f1c.notion.site/606d6dac5c344a3eba65bed524bd815b)
- - [Mapper 적용](https://www.notion.so/DTO-Mapper-64ce3f9fbe8246e8aca6999e626b0a79)
+ - [Mapper 적용](https://rare-fire-f1c.notion.site/DTO-Mapper-64ce3f9fbe8246e8aca6999e626b0a79)
 
 
 ### 공부한내용
  - [Vue.js](https://rare-fire-f1c.notion.site/Vue-js-93562434b128495989405d0c9fb38ed6)
- - [AWS S3 - Spring으로 이미지 업로드하기](https://www.notion.so/AWS-S3-Spring-075c83d6e86f488fabbe4a17c2fe6e53)
+ - [AWS S3 - Spring으로 이미지 업로드하기](https://rare-fire-f1c.notion.site/S3-8d931a366d4342699d0f6e8535272e13)
